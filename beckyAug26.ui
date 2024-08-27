@@ -1,0 +1,3243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>559</width>
+    <height>152</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+	background-color: #121212;
+color:#fff;
+font:11pt  &quot;Helvetica&quot;;
+}
+
+QLabel {
+background:transparent;
+}
+QSpinBox {
+padding-left:1.4em;
+border:none;
+background:transparent;
+}
+/* /////////////////////////////////////////////////////////////////////////////
+                                 QSlider
+///////////////////////////////////////////////////////////////////////////// */
+QSlider::groove:horizontal {
+    height: 10px;
+	margin: 0px;
+	background-color: rgba(22,22,22,100);
+}
+QSlider::groove:horizontal:hover {
+	background-color: rgb(32, 32, 32);
+}
+QSlider::handle:horizontal {
+    background-color: rgb(255, 88, 71);
+    border: none;
+    height: 10px;
+    width: 10px;
+    margin: 0px;
+	border-radius: 5px;
+}
+QSlider::handle:horizontal:hover {
+    background-color: white;
+}
+QSlider::handle:horizontal:pressed {
+    background-color:white;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////
+QSlider
+///////////////////////////////////////////////////////////////////////////// */
+QSlider:vertical {
+min-width:40px;
+min-height:75px;
+max-height:75px;
+}
+QSlider::groove:vertical {
+border-radius: 7px;
+width: 40px;
+margin: 0px;
+background:rgb(22, 24, 29);
+}
+
+QSlider::groove:vertical:hover {
+background: rgba(233,123,111,0.25);
+}
+
+QSlider::handle:vertical {
+background: rgb(233,123,111);
+height: 14px;
+width: 40px;
+margin: 0px;
+border-radius:4px;
+}
+
+QSlider::add-page:vertical {
+background:transparent;
+}
+
+QSlider::handle:vertical:hover {
+background-color: rgb(255,163,151);
+}
+
+QSlider::handle:vertical:pressed {
+background-color:rgb(188,78,66);
+}
+/* ////////////////////////////////////////////////////////////////////////////////////////////////
+									QScrollBar
+//////////////////////////////////////////////////////////////////////////////////////////////// */
+QScrollBar:horizontal {
+	border: none;
+    background:transparent;
+    height: 12px;
+    margin: 0px 10px 0px 10px;
+    border-radius: 3px;
+}
+QScrollBar::handle:horizontal {
+    background: rgb(22,22,22);
+    min-width:24px;
+    border-radius: 4px;
+}
+QScrollBar::add-line:horizontal {
+    border: none;
+    background: transparent;
+    width: 20px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+QScrollBar::sub-line:horizontal {
+    border: none;
+    background: transparent;
+    width: 20px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+QScrollBar::up-arrow:horizontal, 
+QScrollBar::down-arrow:horizontal {
+    background: none;
+}
+QScrollBar::add-page:horizontal, 
+QScrollBar::sub-page:horizontal {
+    background: transparent;
+}
+QScrollBar:vertical {
+    border: none;
+    background-color:transparent;
+    width: 12px;
+    margin: 10px 0px 10px 0px;
+    border-radius: 4px;
+}
+QScrollBar::handle:vertical {
+    background: rgb(22,22,22);
+    min-height: 12px;
+    border-radius: 4px;
+}
+QScrollBar::add-line:vertical {
+    border: none;
+    background: transparent;
+    height: 20px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::sub-line:vertical {
+    border: none;
+    background: transparent;
+    height: 20px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::up-arrow:vertical, 
+QScrollBar::down-arrow:vertical {
+    background: none;
+}
+QScrollBar::add-page:vertical, 
+QScrollBar::sub-page:vertical {
+    background: transparent;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_27">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="0" column="0">
+     <widget class="QStackedWidget" name="mainStack">
+      <property name="styleSheet">
+       <string notr="true">QTabWidget {
+background-color: #fff;
+    border: none;
+}
+
+QTabWidget::pane {
+    border: none;    
+	background-color: #fff;
+}
+
+QTabBar::tab {
+margin-left:9px;
+padding-top:2px;
+padding-bottom:2px;
+background-color: transparent;
+    border: none;
+}
+
+QTabBar::tab:selected {
+background-color: transparent;
+font-weight:bold;
+font-size:8pt;
+}
+
+QTabBar::tab:hover {
+	border-radius: 4px;
+	
+}
+
+QTabBar::tab:only-one {
+background-color: transparent;
+}
+</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="stackGrid">
+       <layout class="QGridLayout" name="gridLayout_3">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QStackedWidget" name="stackedWidget">
+          <property name="styleSheet">
+           <string notr="true">
+    /* ///////////////////////////////////////////////////////////////
+    QToolTip
+    /////////////////////////////////////////////////////////////// */
+    QToolTip {
+        background: rgba(23,23,23, 150);
+        border: 1px solid rgb(100,199,211);
+        border-radius: 5px;
+        padding:4px;
+        text-align: left;
+        color: rgb(100,199,211);
+    }
+    
+QTabWidget {
+background-color: #fff;
+    border: none;
+}
+
+QTabWidget::pane {
+    border: none;    
+	background-color: #fff;
+}
+
+QTabBar::tab {
+min-width:15px;
+max-width:20px;
+margin-left:9px;
+padding:5px;
+background-color: transparent;
+    border: none;
+border-radius:2px;
+}
+
+QTabBar::tab:selected {
+background-color: white;
+font-weight:bold;
+color:black;
+font-size:8pt;
+}
+
+QTabBar::tab:hover {
+	border-radius: 4px;
+	
+}
+
+QTabBar::tab:only-one {
+background-color: transparent;
+}
+</string>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="pageOne">
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="0" column="0">
+             <spacer name="vs_2">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="3" column="0">
+             <widget class="QFrame" name="frame">
+              <layout class="QGridLayout" name="gridLayout_2">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item row="1" column="0">
+                <widget class="QSlider" name="b_slider">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">
+
+/* ///////////////////////////////////////////////////////////////
+QSlider Colors
+/////////////////////////////////////////////////////////////// */
+
+QSlider::handle:vertical {background:rgb(100,150,178);}
+QSlider::handle:vertical:hover {background:rgb(140,190,218);}
+QSlider::handle:vertical:pressed {background:rgb(50,100,128);}
+QSlider::groove:vertical:hover {background:rgba(100,150,178,0.25);}
+QSlider::groove:vertical {background:rgba(100,150,178,0.15);}
+
+        </string>
+                 </property>
+                 <property name="maximum">
+                  <number>3</number>
+                 </property>
+                 <property name="value">
+                  <number>0</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QFrame" name="frame">
+                 <layout class="QVBoxLayout" name="verticalLayout">
+                  <property name="spacing">
+                   <number>6</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>9</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>9</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>9</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>9</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_2">
+                    <property name="text">
+                     <string>Today, I do not feel sad.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_3">
+                    <property name="text">
+                     <string>Today, I feel sad.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_4">
+                    <property name="text">
+                     <string>Today, I feel sad all the time and can't snap out of it.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_5">
+                    <property name="text">
+                     <string>Today, I feel so sad and unhappy that I can't stand it.</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QSpinBox" name="b_box">
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(101, 150, 178);</string>
+                 </property>
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
+                 <property name="buttonSymbols">
+                  <enum>QAbstractSpinBox::NoButtons</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <spacer name="vs">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pageOne">
+           <layout class="QGridLayout" name="gridLayout_5">
+            <item row="0" column="0">
+             <spacer name="vs_4">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="2" column="0">
+             <widget class="QFrame" name="frame_13">
+              <layout class="QGridLayout" name="gridLayout_28">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item row="1" column="0">
+                <widget class="QSlider" name="b_slider_2">
+                 <property name="styleSheet">
+                  <string notr="true">
+
+/* ///////////////////////////////////////////////////////////////
+QSlider Colors
+/////////////////////////////////////////////////////////////// */
+
+QSlider::handle:vertical {background:rgb(67,149,223);}
+QSlider::handle:vertical:hover {background:rgb(107,189,255);}
+QSlider::handle:vertical:pressed {background:rgb(17,99,173);}
+QSlider::groove:vertical:hover {background:rgba(67,149,223,0.25);}
+
+QSlider::groove:vertical {background:rgba(67,149,223,0.15);}
+
+        </string>
+                 </property>
+                 <property name="maximum">
+                  <number>3</number>
+                 </property>
+                 <property name="value">
+                  <number>0</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QFrame" name="frame">
+                 <layout class="QVBoxLayout" name="verticalLayout_3">
+                  <property name="spacing">
+                   <number>6</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>9</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>9</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>9</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>9</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_11">
+                    <property name="text">
+                     <string>I feel fine about the future</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_10">
+                    <property name="text">
+                     <string>I am not particularly discouraged about the future.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_12">
+                    <property name="text">
+                     <string>I feel I have nothing to look forward to.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_13">
+                    <property name="text">
+                     <string>I feel the future is hopeless and that things cannot improve.</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QSpinBox" name="b_box_2">
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
+                 <property name="buttonSymbols">
+                  <enum>QAbstractSpinBox::NoButtons</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <spacer name="vs_3">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pageOne">
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="2" column="0">
+             <spacer name="verticalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="0">
+             <widget class="QFrame" name="frame">
+              <layout class="QGridLayout" name="gridLayout_29">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item row="1" column="0">
+                <widget class="QSlider" name="b_slider_3">
+                 <property name="styleSheet">
+                  <string notr="true">
+
+/* ///////////////////////////////////////////////////////////////
+QSlider Colors
+/////////////////////////////////////////////////////////////// */
+
+QSlider::handle:vertical {background:rgb(82,145,226);}
+QSlider::handle:vertical:hover {background:rgb(122,185,255);}
+QSlider::handle:vertical:pressed {background:rgb(32,95,176);}
+QSlider::groove:vertical:hover {background:rgba(82,145,226,0.25);}
+QSlider::groove:vertical {background:rgba(82,145,226,0.15);}
+
+        </string>
+                 </property>
+                 <property name="maximum">
+                  <number>3</number>
+                 </property>
+                 <property name="value">
+                  <number>0</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QFrame" name="frame">
+                 <layout class="QVBoxLayout" name="verticalLayout_2">
+                  <property name="leftMargin">
+                   <number>9</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>9</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>9</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>9</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_6">
+                    <property name="text">
+                     <string>I do not feel like a failure.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_7">
+                    <property name="text">
+                     <string>I feel I have failed more than the average person.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_8">
+                    <property name="text">
+                     <string>As I look back on my life, all I can see is a lot of failures.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_9">
+                    <property name="text">
+                     <string>I feel I am a complete failure as a person.</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QSpinBox" name="b_box_3">
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
+                 <property name="buttonSymbols">
+                  <enum>QAbstractSpinBox::NoButtons</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <spacer name="verticalSpacer_6">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pageOne">
+           <layout class="QGridLayout" name="gridLayout_8">
+            <item row="3" column="0">
+             <spacer name="verticalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="2" column="0">
+             <widget class="QFrame" name="frame_2">
+              <layout class="QGridLayout" name="gridLayout_30">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item row="1" column="0">
+                <widget class="QSlider" name="b_slider_4">
+                 <property name="styleSheet">
+                  <string notr="true">
+
+/* ///////////////////////////////////////////////////////////////
+QSlider Colors
+/////////////////////////////////////////////////////////////// */
+
+QSlider::handle:vertical {background:rgb(97,141,228);}
+QSlider::handle:vertical:hover {background:rgb(137,181,255);}
+QSlider::handle:vertical:pressed {background:rgb(47,91,178);}
+QSlider::groove:vertical:hover {background:rgba(97,141,228,0.25);}
+QSlider::groove:vertical {background:rgba(97,141,228,0.15);}
+
+        </string>
+                 </property>
+                 <property name="maximum">
+                  <number>3</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>true</bool>
+                 </property>
+                 <property name="invertedControls">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QFrame" name="frame_20">
+                 <layout class="QVBoxLayout" name="verticalLayout_4">
+                  <property name="leftMargin">
+                   <number>9</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>9</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>9</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>9</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_14">
+                    <property name="text">
+                     <string>I get as much satisfaction out of things as I used to.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_15">
+                    <property name="text">
+                     <string>I don't enjoy things the way I used to.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_16">
+                    <property name="text">
+                     <string>I don't get real satisfaction out of anything anymore.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_17">
+                    <property name="text">
+                     <string>I am dissatisfied or bored with everything.</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QSpinBox" name="b_box_4">
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
+                 <property name="buttonSymbols">
+                  <enum>QAbstractSpinBox::NoButtons</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <spacer name="verticalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pageOne">
+           <layout class="QGridLayout" name="gridLayout_6">
+            <item row="0" column="0">
+             <spacer name="verticalSpacer_10">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="3" column="0">
+             <spacer name="verticalSpacer_9">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="2" column="0">
+             <widget class="QFrame" name="frame">
+              <layout class="QGridLayout" name="gridLayout_31">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item row="1" column="0">
+                <widget class="QSlider" name="b_slider_5">
+                 <property name="styleSheet">
+                  <string notr="true">
+
+/* ///////////////////////////////////////////////////////////////
+QSlider Colors
+/////////////////////////////////////////////////////////////// */
+
+QSlider::handle:vertical {background:rgb(113,136,229);}
+QSlider::handle:vertical:hover {background:rgb(153,176,255);}
+QSlider::handle:vertical:pressed {background:rgb(63,86,179);}
+QSlider::groove:vertical:hover {background:rgba(113,136,229,0.25);}
+QSlider::groove:vertical {background:rgba(113,136,229,0.15);}
+</string>
+                 </property>
+                 <property name="maximum">
+                  <number>3</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QFrame" name="frame">
+                 <layout class="QVBoxLayout" name="verticalLayout_8">
+                  <item>
+                   <widget class="QLabel" name="label_30">
+                    <property name="text">
+                     <string>I don't feel particularly guilty</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_33">
+                    <property name="text">
+                     <string>I feel guilty a good part of the time.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_32">
+                    <property name="text">
+                     <string>I feel quite guilty most of the time.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_31">
+                    <property name="text">
+                     <string>I feel guilty all of the time.</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QSpinBox" name="b_box_5">
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
+                 <property name="buttonSymbols">
+                  <enum>QAbstractSpinBox::NoButtons</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pageOne">
+           <layout class="QGridLayout" name="gridLayout_7">
+            <item row="0" column="0">
+             <spacer name="verticalSpacer_12">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="3" column="0">
+             <spacer name="verticalSpacer_11">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="2" column="0">
+             <widget class="QFrame" name="frame">
+              <layout class="QGridLayout" name="gridLayout_32">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item row="1" column="1">
+                <widget class="QFrame" name="frame">
+                 <layout class="QVBoxLayout" name="verticalLayout_21">
+                  <item>
+                   <widget class="QLabel" name="label_82">
+                    <property name="text">
+                     <string>I don't feel I am being punished.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_83">
+                    <property name="text">
+                     <string>I feel I may be punished.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_84">
+                    <property name="text">
+                     <string>I expect to be punished.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_85">
+                    <property name="text">
+                     <string>I feel I am being punished.</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QSlider" name="b_slider_6">
+                 <property name="styleSheet">
+                  <string notr="true">
+
+/* ///////////////////////////////////////////////////////////////
+QSlider Colors
+/////////////////////////////////////////////////////////////// */
+
+QSlider::handle:vertical {background:rgb(128,131,228);}
+QSlider::handle:vertical:hover {background:rgb(168,171,255);}
+QSlider::handle:vertical:pressed {background:rgb(78,81,178);}
+QSlider::groove:vertical:hover {background:rgba(128,131,228,0.25);}
+QSlider::groove:vertical {background:rgba(128,131,228,0.15);}
+        </string>
+                 </property>
+                 <property name="maximum">
+                  <number>3</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QSpinBox" name="b_box_6">
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
+                 <property name="buttonSymbols">
+                  <enum>QAbstractSpinBox::NoButtons</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pageOne">
+           <layout class="QGridLayout" name="gridLayout_10">
+            <item row="2" column="0">
+             <spacer name="verticalSpacer_13">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="0">
+             <widget class="QFrame" name="frame">
+              <layout class="QGridLayout" name="gridLayout_33">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item row="1" column="0">
+                <widget class="QSlider" name="b_slider_7">
+                 <property name="styleSheet">
+                  <string notr="true">
+
+/* ///////////////////////////////////////////////////////////////
+QSlider Colors
+/////////////////////////////////////////////////////////////// */
+
+QSlider::handle:vertical {background:rgb(142,125,225);}
+QSlider::handle:vertical:hover {background:rgb(182,165,255);}
+QSlider::handle:vertical:pressed {background:rgb(92,75,175);}
+QSlider::groove:vertical:hover {background:rgba(142,125,225,0.25);}
+QSlider::groove:vertical {background:rgba(142,125,225,0.15);}
+
+        </string>
+                 </property>
+                 <property name="maximum">
+                  <number>3</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QFrame" name="frame">
+                 <layout class="QVBoxLayout" name="verticalLayout_9">
+                  <item>
+                   <widget class="QLabel" name="label_34">
+                    <property name="text">
+                     <string>I don't feel disappointed in myself.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_35">
+                    <property name="text">
+                     <string>I am disappointed in myself.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_36">
+                    <property name="text">
+                     <string>I am disgusted with myself.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_37">
+                    <property name="text">
+                     <string>I hate myself.</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QSpinBox" name="b_box_7">
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
+                 <property name="buttonSymbols">
+                  <enum>QAbstractSpinBox::NoButtons</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <spacer name="verticalSpacer_14">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pageOne">
+           <layout class="QGridLayout" name="gridLayout_11">
+            <item row="1" column="0">
+             <widget class="QFrame" name="frame">
+              <layout class="QGridLayout" name="gridLayout_34">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item row="1" column="1">
+                <widget class="QFrame" name="frame">
+                 <layout class="QVBoxLayout" name="verticalLayout_7">
+                  <item>
+                   <widget class="QLabel" name="label_26">
+                    <property name="text">
+                     <string>I don't feel I am any worse than anybody else.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_27">
+                    <property name="text">
+                     <string>I am critical of myself for my weaknesses or mistakes.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_28">
+                    <property name="text">
+                     <string>I blame myself all the time for my faults.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_29">
+                    <property name="text">
+                     <string>I blame myself for everything bad that happens.</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QSlider" name="b_slider_8">
+                 <property name="styleSheet">
+                  <string notr="true">
+
+/* ///////////////////////////////////////////////////////////////
+QSlider Colors
+/////////////////////////////////////////////////////////////// */
+
+QSlider::handle:vertical {background:rgb(156,119,221);}
+QSlider::handle:vertical:hover {background:rgb(196,159,255);}
+QSlider::handle:vertical:pressed {background:rgb(106,69,171);}
+QSlider::groove:vertical:hover {background:rgba(156,119,221,0.25);}
+QSlider::groove:vertical {background:rgba(156,119,221,0.15);}
+
+        </string>
+                 </property>
+                 <property name="maximum">
+                  <number>3</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QSpinBox" name="b_box_8">
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
+                 <property name="buttonSymbols">
+                  <enum>QAbstractSpinBox::NoButtons</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <spacer name="verticalSpacer_15">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="0" column="0">
+             <spacer name="verticalSpacer_16">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pageOne">
+           <layout class="QGridLayout" name="gridLayout_12">
+            <item row="2" column="0">
+             <spacer name="verticalSpacer_17">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="0">
+             <widget class="QFrame" name="frame">
+              <layout class="QGridLayout" name="gridLayout_35">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item row="1" column="0">
+                <widget class="QSlider" name="b_slider_9">
+                 <property name="styleSheet">
+                  <string notr="true">
+
+/* ///////////////////////////////////////////////////////////////
+QSlider Colors
+/////////////////////////////////////////////////////////////// */
+
+QSlider::handle:vertical {background:rgb(170,112,215);}
+QSlider::handle:vertical:hover {background:rgb(210,152,255);}
+QSlider::handle:vertical:pressed {background:rgb(120,62,165);}
+QSlider::groove:vertical:hover {background:rgba(170,112,215,0.25);}
+QSlider::groove:vertical {background:rgba(170,112,215,0.15);}
+
+        </string>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QFrame" name="frame">
+                 <layout class="QVBoxLayout" name="verticalLayout_6">
+                  <property name="leftMargin">
+                   <number>9</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>9</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>9</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>9</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_22">
+                    <property name="text">
+                     <string>I don't have any thoughts of killing myself.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_23">
+                    <property name="text">
+                     <string>I have thoughts of killing myself, but I would not carry them out.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_24">
+                    <property name="text">
+                     <string>I would like to kill myself.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_25">
+                    <property name="text">
+                     <string>I would kill myself if I had the chance.</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QSpinBox" name="b_box_9">
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
+                 <property name="buttonSymbols">
+                  <enum>QAbstractSpinBox::NoButtons</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <spacer name="verticalSpacer_18">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pageOne">
+           <layout class="QGridLayout" name="gridLayout_13">
+            <item row="2" column="0">
+             <spacer name="verticalSpacer_19">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="0">
+             <widget class="QFrame" name="frame">
+              <layout class="QGridLayout" name="gridLayout_36">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item row="1" column="0">
+                <widget class="QSlider" name="b_slider_10">
+                 <property name="styleSheet">
+                  <string notr="true">
+
+/* ///////////////////////////////////////////////////////////////
+QSlider Colors
+/////////////////////////////////////////////////////////////// */
+
+QSlider::handle:vertical {background:rgb(183,104,208);}
+QSlider::handle:vertical:hover {background:rgb(223,144,248);}
+QSlider::handle:vertical:pressed {background:rgb(133,54,158);}
+QSlider::groove:vertical:hover {background:rgba(183,104,208,0.25);}
+QSlider::groove:vertical {background:rgba(183,104,208,0.15);}
+
+        </string>
+                 </property>
+                 <property name="maximum">
+                  <number>3</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>true</bool>
+                 </property>
+                 <property name="invertedControls">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QFrame" name="frame">
+                 <layout class="QVBoxLayout" name="verticalLayout_5">
+                  <property name="spacing">
+                   <number>6</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>9</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>9</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>9</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>9</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_19">
+                    <property name="text">
+                     <string>I don't cry any more than usual.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_18">
+                    <property name="text">
+                     <string>I cry more now than I used to.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_20">
+                    <property name="text">
+                     <string>I cry all the time now.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_21">
+                    <property name="text">
+                     <string>I used to be able to cry, but now I can't cry even though I want to.</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QSpinBox" name="b_box_10">
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
+                 <property name="buttonSymbols">
+                  <enum>QAbstractSpinBox::NoButtons</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <spacer name="verticalSpacer_20">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pageOne">
+           <layout class="QGridLayout" name="gridLayout_15">
+            <item row="1" column="0">
+             <widget class="QFrame" name="frame">
+              <layout class="QGridLayout" name="gridLayout_37">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item row="1" column="1">
+                <widget class="QFrame" name="frame">
+                 <layout class="QVBoxLayout" name="verticalLayout_10">
+                  <property name="spacing">
+                   <number>6</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>9</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>9</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>9</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>9</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_38">
+                    <property name="text">
+                     <string>I'm not more irritable today than most days.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_39">
+                    <property name="text">
+                     <string>I am slightly more irritated now than usual.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_40">
+                    <property name="text">
+                     <string>I am quite annoyed or irritated a good deal of the time.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_41">
+                    <property name="text">
+                     <string>I feel irritated all the time.</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QSlider" name="b_slider_11">
+                 <property name="styleSheet">
+                  <string notr="true">
+
+/* ///////////////////////////////////////////////////////////////
+QSlider Colors
+/////////////////////////////////////////////////////////////// */
+
+QSlider::handle:vertical {background:rgb(194,96,199);}
+QSlider::handle:vertical:hover {background:rgb(234,136,239);}
+QSlider::handle:vertical:pressed {background:rgb(144,46,149);}
+QSlider::groove:vertical:hover {background:rgba(194,96,199,0.25);}
+QSlider::groove:vertical {background:rgba(194,96,199,0.15);}
+
+        </string>
+                 </property>
+                 <property name="maximum">
+                  <number>3</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QSpinBox" name="b_box_11">
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
+                 <property name="buttonSymbols">
+                  <enum>QAbstractSpinBox::NoButtons</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <spacer name="verticalSpacer_23">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="0" column="0">
+             <spacer name="verticalSpacer_24">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pageOne">
+           <layout class="QGridLayout" name="gridLayout_16">
+            <item row="2" column="0">
+             <spacer name="verticalSpacer_25">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="0">
+             <widget class="QFrame" name="frame">
+              <layout class="QGridLayout" name="gridLayout_38">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item row="1" column="0">
+                <widget class="QSlider" name="b_slider_12">
+                 <property name="styleSheet">
+                  <string notr="true">
+
+/* ///////////////////////////////////////////////////////////////
+QSlider Colors
+/////////////////////////////////////////////////////////////// */
+
+QSlider::handle:vertical {background:rgb(205,88,188);}
+QSlider::handle:vertical:hover {background:rgb(245,128,228);}
+QSlider::handle:vertical:pressed {background:rgb(155,38,138);}
+QSlider::groove:vertical:hover {background:rgba(205,88,188,0.25);}
+QSlider::groove:vertical {background:rgba(205,88,188,0.15);}
+
+        </string>
+                 </property>
+                 <property name="maximum">
+                  <number>3</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QFrame" name="frame_2">
+                 <layout class="QVBoxLayout" name="verticalLayout_11">
+                  <item>
+                   <widget class="QLabel" name="label_42">
+                    <property name="text">
+                     <string>Today I am as interested in others as I usually am.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_43">
+                    <property name="text">
+                     <string>I am less interested in other people than I used to be.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_44">
+                    <property name="text">
+                     <string>I have lost most of my interest in other people.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_45">
+                    <property name="text">
+                     <string>I have lost all of my interest in other people.</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QSpinBox" name="b_box_12">
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
+                 <property name="buttonSymbols">
+                  <enum>QAbstractSpinBox::NoButtons</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <spacer name="verticalSpacer_26">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pageOne">
+           <layout class="QGridLayout" name="gridLayout_18">
+            <item row="2" column="0">
+             <spacer name="verticalSpacer_27">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="0">
+             <widget class="QFrame" name="frame">
+              <layout class="QGridLayout" name="gridLayout_39">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item row="1" column="1">
+                <widget class="QFrame" name="frame_3">
+                 <layout class="QVBoxLayout" name="verticalLayout_12">
+                  <item>
+                   <widget class="QLabel" name="label_46">
+                    <property name="text">
+                     <string>I make decisions about as well as I ever could.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_47">
+                    <property name="text">
+                     <string>I put off making decisions more than I used to.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_48">
+                    <property name="text">
+                     <string>I have greater difficulty in making decisions more than I used to.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_49">
+                    <property name="text">
+                     <string>I can't make decisions at all anymore.</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QSlider" name="b_slider_13">
+                 <property name="styleSheet">
+                  <string notr="true">
+
+/* ///////////////////////////////////////////////////////////////
+QSlider Colors
+/////////////////////////////////////////////////////////////// */
+
+QSlider::handle:vertical {background:rgb(214,79,176);}
+QSlider::handle:vertical:hover {background:rgb(254,119,216);}
+QSlider::handle:vertical:pressed {background:rgb(164,29,126);}
+QSlider::groove:vertical:hover {background:rgba(214,79,176,0.25);}
+QSlider::groove:vertical {background:rgba(214,79,176,0.15);}
+
+        </string>
+                 </property>
+                 <property name="maximum">
+                  <number>3</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QSpinBox" name="b_box_13">
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
+                 <property name="buttonSymbols">
+                  <enum>QAbstractSpinBox::NoButtons</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <spacer name="verticalSpacer_28">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pageOne">
+           <layout class="QGridLayout" name="gridLayout_19">
+            <item row="3" column="0">
+             <spacer name="verticalSpacer_29">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="2" column="0">
+             <widget class="QFrame" name="frame">
+              <layout class="QGridLayout" name="gridLayout_40">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item row="1" column="0">
+                <widget class="QSlider" name="b_slider_14">
+                 <property name="styleSheet">
+                  <string notr="true">
+
+/* ///////////////////////////////////////////////////////////////
+QSlider Colors
+/////////////////////////////////////////////////////////////// */
+
+QSlider::handle:vertical {background:rgb(99,160,201);}
+QSlider::handle:vertical:hover {background:rgb(139,200,241);}
+QSlider::handle:vertical:pressed {background:rgb(49,110,151);}
+QSlider::groove:vertical:hover {background:rgba(99,160,201,0.25);}
+QSlider::groove:vertical {background:rgba(99,160,201,0.15);}
+
+        </string>
+                 </property>
+                 <property name="maximum">
+                  <number>3</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QFrame" name="frame_4">
+                 <layout class="QVBoxLayout" name="verticalLayout_13">
+                  <item>
+                   <widget class="QLabel" name="label_50">
+                    <property name="text">
+                     <string>I don't feel that I look any worse than I used to.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_51">
+                    <property name="text">
+                     <string>I am worried that I am looking old or ugly</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_52">
+                    <property name="text">
+                     <string>I feel there are permanent changes in my appearance that make me look ugly</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_53">
+                    <property name="text">
+                     <string>I believe I look ugly</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QSpinBox" name="b_box_14">
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
+                 <property name="buttonSymbols">
+                  <enum>QAbstractSpinBox::NoButtons</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <spacer name="verticalSpacer_30">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pageOne">
+           <layout class="QGridLayout" name="gridLayout_20">
+            <item row="2" column="0">
+             <spacer name="verticalSpacer_31">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="0">
+             <widget class="QFrame" name="frame">
+              <layout class="QGridLayout" name="gridLayout_41">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item row="1" column="1">
+                <widget class="QFrame" name="frame_5">
+                 <layout class="QVBoxLayout" name="verticalLayout_14">
+                  <item>
+                   <widget class="QLabel" name="label_54">
+                    <property name="text">
+                     <string>I can work about as well as before.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_55">
+                    <property name="text">
+                     <string>It takes an extra effort to get started at doing something.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_56">
+                    <property name="text">
+                     <string>I have to push myself very hard to do anything.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_57">
+                    <property name="text">
+                     <string>I can't do any work at all.</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QSlider" name="b_slider_15">
+                 <property name="styleSheet">
+                  <string notr="true">
+
+/* ///////////////////////////////////////////////////////////////
+QSlider Colors
+/////////////////////////////////////////////////////////////// */
+
+QSlider::handle:vertical {background:rgb(153,102,153);}
+QSlider::handle:vertical:hover {background:rgb(193,142,193);}
+QSlider::handle:vertical:pressed {background:rgb(103,52,103);}
+QSlider::groove:vertical:hover {background:rgba(153,102,153,0.25);}
+QSlider::groove:vertical {background:rgba(153,102,153,0.15);}
+
+        </string>
+                 </property>
+                 <property name="maximum">
+                  <number>3</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QSpinBox" name="b_box_15">
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
+                 <property name="buttonSymbols">
+                  <enum>QAbstractSpinBox::NoButtons</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <spacer name="verticalSpacer_32">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pageOne">
+           <layout class="QGridLayout" name="gridLayout_9">
+            <item row="2" column="0">
+             <spacer name="verticalSpacer_33">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="0">
+             <widget class="QFrame" name="frame">
+              <layout class="QGridLayout" name="gridLayout_42">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item row="1" column="1">
+                <widget class="QFrame" name="frame_6">
+                 <layout class="QVBoxLayout" name="verticalLayout_15">
+                  <item>
+                   <widget class="QLabel" name="label_58">
+                    <property name="text">
+                     <string>I can sleep as well as usual.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_59">
+                    <property name="text">
+                     <string>I don't sleep as well as I used to.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_60">
+                    <property name="text">
+                     <string>I wake up 1-2 hours earlier than usual and find it hard to get back to sleep.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_61">
+                    <property name="text">
+                     <string>I wake up several hours earlier than I used to and cannot get back to sleep</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QSlider" name="b_slider_16">
+                 <property name="styleSheet">
+                  <string notr="true">
+
+/* ///////////////////////////////////////////////////////////////
+QSlider Colors
+/////////////////////////////////////////////////////////////// */
+
+QSlider::handle:vertical {background:rgb(96,175,106);}
+QSlider::handle:vertical:hover {background:rgb(136,215,146);}
+QSlider::handle:vertical:pressed {background:rgb(46,125,56);}
+QSlider::groove:vertical:hover {background:rgba(96,175,106,0.25);}
+QSlider::groove:vertical {background:rgba(96,175,106,0.15);}
+
+        </string>
+                 </property>
+                 <property name="maximum">
+                  <number>3</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QSpinBox" name="b_box_16">
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
+                 <property name="buttonSymbols">
+                  <enum>QAbstractSpinBox::NoButtons</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <spacer name="verticalSpacer_34">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pageOne">
+           <layout class="QGridLayout" name="gridLayout_22">
+            <item row="1" column="0">
+             <widget class="QFrame" name="frame">
+              <layout class="QGridLayout" name="gridLayout_43">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item row="1" column="0">
+                <widget class="QSlider" name="b_slider_17">
+                 <property name="styleSheet">
+                  <string notr="true">
+
+/* ///////////////////////////////////////////////////////////////
+QSlider Colors
+/////////////////////////////////////////////////////////////// */
+
+QSlider::handle:vertical {background:rgb(207,86,150);}
+QSlider::handle:vertical:hover {background:rgb(247,126,190);}
+QSlider::handle:vertical:pressed {background:rgb(157,36,100);}
+QSlider::groove:vertical:hover {background:rgba(207,86,150,0.25);}
+QSlider::groove:vertical {background:rgba(207,86,150,0.15);}
+
+        </string>
+                 </property>
+                 <property name="maximum">
+                  <number>3</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QFrame" name="frame_7">
+                 <layout class="QVBoxLayout" name="verticalLayout_16">
+                  <item>
+                   <widget class="QLabel" name="label_62">
+                    <property name="text">
+                     <string>I don't get more tired than usual.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_63">
+                    <property name="text">
+                     <string>I get tired more easily than I used to.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_64">
+                    <property name="text">
+                     <string>I get tired from doing almost anything.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_65">
+                    <property name="text">
+                     <string>I am too tired to do anything.</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QSpinBox" name="b_box_17">
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
+                 <property name="buttonSymbols">
+                  <enum>QAbstractSpinBox::NoButtons</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <spacer name="verticalSpacer_37">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="0" column="0">
+             <spacer name="verticalSpacer_38">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pageOne">
+           <layout class="QGridLayout" name="gridLayout_23">
+            <item row="1" column="0">
+             <widget class="QFrame" name="frame">
+              <layout class="QGridLayout" name="gridLayout_44">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item row="1" column="0">
+                <widget class="QSlider" name="b_slider_18">
+                 <property name="styleSheet">
+                  <string notr="true">
+
+/* ///////////////////////////////////////////////////////////////
+QSlider Colors
+/////////////////////////////////////////////////////////////// */
+
+QSlider::handle:vertical {background:rgb(236,46,103);}
+QSlider::handle:vertical:hover {background:rgb(255,86,143);}
+QSlider::handle:vertical:pressed {background:rgb(186,0,53);}
+QSlider::groove:vertical:hover {background:rgba(236,46,103,0.25);}
+QSlider::groove:vertical {background:rgba(236,46,103,0.15);}
+
+        </string>
+                 </property>
+                 <property name="maximum">
+                  <number>3</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QFrame" name="frame_8">
+                 <layout class="QVBoxLayout" name="verticalLayout_17">
+                  <item>
+                   <widget class="QLabel" name="label_66">
+                    <property name="text">
+                     <string>My appetite is no worse than usual.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_67">
+                    <property name="text">
+                     <string>My appetite is not as good as it used to be.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_68">
+                    <property name="text">
+                     <string>My appetite is much worse now.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_69">
+                    <property name="text">
+                     <string>I have no appetite at all anymore.</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QSpinBox" name="b_box_18">
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
+                 <property name="buttonSymbols">
+                  <enum>QAbstractSpinBox::NoButtons</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <spacer name="verticalSpacer_35">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="0" column="0">
+             <spacer name="verticalSpacer_36">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pageOne">
+           <layout class="QGridLayout" name="gridLayout_24">
+            <item row="1" column="0">
+             <widget class="QFrame" name="frame">
+              <layout class="QGridLayout" name="gridLayout_45">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item row="1" column="0">
+                <widget class="QSlider" name="b_slider_19">
+                 <property name="styleSheet">
+                  <string notr="true">
+
+/* ///////////////////////////////////////////////////////////////
+QSlider Colors
+/////////////////////////////////////////////////////////////// */
+
+QSlider::handle:vertical {background:rgb(236,47,87);}
+QSlider::handle:vertical:hover {background:rgb(255,87,127);}
+QSlider::handle:vertical:pressed {background:rgb(186,0,37);}
+QSlider::groove:vertical:hover {background:rgba(236,47,87,0.25);}
+QSlider::groove:vertical {background:rgba(236,47,87,0.15);}
+
+        </string>
+                 </property>
+                 <property name="maximum">
+                  <number>3</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QFrame" name="frame_9">
+                 <layout class="QVBoxLayout" name="verticalLayout_18">
+                  <item>
+                   <widget class="QLabel" name="label_70">
+                    <property name="text">
+                     <string>I'm no more hungry nor thirsty than I usually am.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_71">
+                    <property name="text">
+                     <string>I'm less hungry or thirsty than usual.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_72">
+                    <property name="text">
+                     <string>I have barely eaten anything today.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_73">
+                    <property name="text">
+                     <string>I have not eaten anything today.</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QSpinBox" name="b_box_19">
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
+                 <property name="buttonSymbols">
+                  <enum>QAbstractSpinBox::NoButtons</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <spacer name="verticalSpacer_39">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="0" column="0">
+             <spacer name="verticalSpacer_40">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pageOne">
+           <layout class="QGridLayout" name="gridLayout_14">
+            <item row="1" column="0">
+             <widget class="QFrame" name="frame">
+              <layout class="QGridLayout" name="gridLayout_46">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item row="1" column="0">
+                <widget class="QSlider" name="b_slider_20">
+                 <property name="styleSheet">
+                  <string notr="true">
+
+/* ///////////////////////////////////////////////////////////////
+QSlider Colors
+/////////////////////////////////////////////////////////////// */
+
+QSlider::handle:vertical {background:rgb(242,89,85);}
+QSlider::handle:vertical:hover {background:rgb(255,129,125);}
+QSlider::handle:vertical:pressed {background:rgb(192,39,35);}
+QSlider::groove:vertical:hover {background:rgba(242,89,85,0.25);}
+QSlider::groove:vertical {background:rgba(242,89,85,0.15);}
+
+        </string>
+                 </property>
+                 <property name="maximum">
+                  <number>3</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QFrame" name="frame_10">
+                 <layout class="QVBoxLayout" name="verticalLayout_19">
+                  <item>
+                   <widget class="QLabel" name="label_74">
+                    <property name="text">
+                     <string>I am no more worried about my health than usual.</string>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_75">
+                    <property name="text">
+                     <string>I am worried about physical problems like aches, pains etc.</string>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_76">
+                    <property name="text">
+                     <string>I am burdened by the thoughts of my poor physical health</string>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_77">
+                    <property name="text">
+                     <string>I cannot concentrate on anything other than my physical ailments.</string>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QSpinBox" name="b_box_20">
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
+                 <property name="buttonSymbols">
+                  <enum>QAbstractSpinBox::NoButtons</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <spacer name="verticalSpacer_41">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="0" column="0">
+             <spacer name="verticalSpacer_42">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pageOne">
+           <layout class="QGridLayout" name="gridLayout_17">
+            <item row="2" column="0">
+             <widget class="QFrame" name="frame_12">
+              <layout class="QGridLayout" name="gridLayout_47">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item row="1" column="1">
+                <widget class="QFrame" name="frame_11">
+                 <layout class="QVBoxLayout" name="verticalLayout_20">
+                  <item>
+                   <widget class="QLabel" name="label_78">
+                    <property name="text">
+                     <string>I have not noticed any recent change in my interest in sex.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_79">
+                    <property name="text">
+                     <string>I am less interested in sex than I used to be.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_80">
+                    <property name="text">
+                     <string>I have almost no interest in sex.</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_81">
+                    <property name="text">
+                     <string>I have lost interest in sex completely.</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QSlider" name="b_slider_21">
+                 <property name="styleSheet">
+                  <string notr="true">
+
+/* ///////////////////////////////////////////////////////////////
+QSlider Colors
+/////////////////////////////////////////////////////////////// */
+
+QSlider::handle:vertical {background:rgb(189,97,218);}
+QSlider::handle:vertical:hover {background:rgb(229,137,255);}
+QSlider::handle:vertical:pressed {background:rgb(139,47,168);}
+QSlider::groove:vertical:hover {background:rgba(189,97,218,0.25);}
+QSlider::groove:vertical {background:rgba(189,97,218,0.15);}
+
+        </string>
+                 </property>
+                 <property name="maximum">
+                  <number>3</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QSpinBox" name="b_box_21">
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
+                 <property name="buttonSymbols">
+                  <enum>QAbstractSpinBox::NoButtons</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <spacer name="verticalSpacer_44">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="3" column="0">
+             <spacer name="verticalSpacer_43">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pageOne">
+           <layout class="QGridLayout" name="gridLayout_26">
+            <item row="2" column="0">
+             <spacer name="verticalSpacer_21">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="0">
+             <widget class="QFrame" name="frame">
+              <layout class="QGridLayout" name="gridLayout_48">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item row="1" column="1">
+                <widget class="QScrollArea" name="scrollArea">
+                 <property name="frameShape">
+                  <enum>QFrame::NoFrame</enum>
+                 </property>
+                 <property name="widgetResizable">
+                  <bool>true</bool>
+                 </property>
+                 <widget class="QWidget" name="scrollAreaWidgetContents">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>471</width>
+                    <height>144</height>
+                   </rect>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_25">
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="label">
+                     <property name="text">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'TimesNewRoman'; font-size:9pt; font-weight:600;&quot;&gt;1-10&lt;/span&gt;&lt;span style=&quot; font-family:'TimesNewRoman'; font-size:9pt;&quot;&gt; These ups and downs are considered normal &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'TimesNewRoman'; font-size:9pt; font-weight:600;&quot;&gt;11-16&lt;/span&gt;&lt;span style=&quot; font-family:'TimesNewRoman'; font-size:9pt;&quot;&gt; Mild mood disturbance &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'TimesNewRoman'; font-size:9pt; font-weight:600;&quot;&gt;17-20&lt;/span&gt;&lt;span style=&quot; font-family:'TimesNewRoman'; font-size:9pt;&quot;&gt; Borderline clinical depression &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'TimesNewRoman'; font-size:9pt; font-weight:600;&quot;&gt;21-30&lt;/span&gt;&lt;span style=&quot; font-family:'TimesNewRoman'; font-size:9pt;&quot;&gt; Moderate depression &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'TimesNewRoman'; font-size:9pt; font-weight:600;&quot;&gt;31-40&lt;/span&gt;&lt;span style=&quot; font-family:'TimesNewRoman'; font-size:9pt;&quot;&gt; Severe depression &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'TimesNewRoman'; font-size:9pt; font-weight:600;&quot;&gt;over 40&lt;/span&gt;&lt;span style=&quot; font-family:'TimesNewRoman'; font-size:9pt;&quot;&gt; Extreme depression &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QSlider" name="beck_summary">
+                 <property name="styleSheet">
+                  <string notr="true">
+
+/* ///////////////////////////////////////////////////////////////
+QSlider Colors
+/////////////////////////////////////////////////////////////// */
+
+QSlider::handle:vertical {background:rgb(96,175,106);}
+QSlider::handle:vertical:hover {background:rgb(136,215,146);}
+QSlider::handle:vertical:pressed {background:rgb(46,125,56);}
+QSlider::groove:vertical:hover {background:rgba(96,175,106,0.25);}
+QSlider::groove:vertical {background:rgba(96,175,106,0.15);}
+
+        </string>
+                 </property>
+                 <property name="maximum">
+                  <number>64</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="invertedAppearance">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QSpinBox" name="sum_box">
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                 <property name="buttonSymbols">
+                  <enum>QAbstractSpinBox::NoButtons</enum>
+                 </property>
+                 <property name="suffix">
+                  <string> BECKys</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <spacer name="verticalSpacer_22">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pageTwo">
+       <layout class="QGridLayout" name="gridLayout_21">
+        <item row="0" column="0">
+         <widget class="QFrame" name="hidemeframe">
+          <layout class="QVBoxLayout" name="verticalLayout_22">
+           <item>
+            <widget class="QDateEdit" name="beck_date"/>
+           </item>
+           <item>
+            <widget class="QTimeEdit" name="beck_time"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QTableView" name="beck_table">
+          <property name="styleSheet">
+           <string notr="true">
+ QTableView {
+     background-color: transparent;
+     selection-background-color: #7e57c2;
+     gridline-color:transparent;
+     color:rgb(46,58,146);
+ }
+ QTableView::item {
+     padding: 1px;
+     background:rgb(111,123,211);
+ }
+ QTableView::item:selected {
+        color:rgb(46,58,146);
+     background:rgb(23, 23, 23);
+ }
+ </string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="showGrid">
+           <bool>false</bool>
+          </property>
+          <property name="sortingEnabled">
+           <bool>true</bool>
+          </property>
+          <attribute name="horizontalHeaderCascadingSectionResizes">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="horizontalHeaderMinimumSectionSize">
+           <number>12</number>
+          </attribute>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>559</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuBECK">
+    <property name="title">
+     <string>BECK</string>
+    </property>
+    <addaction name="actionShowBeckExam"/>
+    <addaction name="actionShowBeckTable"/>
+    <addaction name="actionClose"/>
+   </widget>
+   <widget class="QMenu" name="menuData">
+    <property name="title">
+     <string>Data</string>
+    </property>
+    <addaction name="actionCommit"/>
+    <addaction name="actionDelete"/>
+   </widget>
+   <widget class="QMenu" name="menuViews">
+    <property name="title">
+     <string>Views</string>
+    </property>
+    <addaction name="actionNext"/>
+    <addaction name="actionPrev"/>
+    <addaction name="actionHome"/>
+   </widget>
+   <addaction name="menuBECK"/>
+   <addaction name="menuData"/>
+   <addaction name="menuViews"/>
+  </widget>
+  <action name="actionShowBeckExam">
+   <property name="text">
+    <string>Show Input View</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+1</string>
+   </property>
+  </action>
+  <action name="actionShowBeckTable">
+   <property name="text">
+    <string>Show Data View</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+2</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="text">
+    <string>Close</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionCommit">
+   <property name="text">
+    <string>Commit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+C</string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="text">
+    <string>Delete Record(s)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+D</string>
+   </property>
+  </action>
+  <action name="actionNext">
+   <property name="text">
+    <string>Next Question</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+Num+Right</string>
+   </property>
+  </action>
+  <action name="actionPrev">
+   <property name="text">
+    <string>Previous Page</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+Num+Left</string>
+   </property>
+  </action>
+  <action name="actionHome">
+   <property name="text">
+    <string>Home</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+Num+Up</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../../QtResourcesFeb20/becky.qrc"/>
+ </resources>
+ <connections/>
+</ui>
